@@ -5,7 +5,15 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `https://headless.guqlibrary.georgetown.domains/graphql`,
+        develop: {
+          hardCacheMediaFiles: true,
+        },
+      },
+    }`gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
